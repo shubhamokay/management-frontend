@@ -13,7 +13,7 @@ const Register = () => {
     try {
       await axios.post('https://management-backend-oput.onrender.com/api/users/register', { username, password, role }, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('authToken')}`,
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
         }
       });
       alert('User registered successfully');
