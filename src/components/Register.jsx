@@ -9,16 +9,29 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
-      await axios.post(`https://management-backend-oput.onrender.com/api/users/register`, {
-        username,
-        password,
-        role,
+      await axios.post('https://management-backend-oput.onrender.com/api/users/register', { username, password, role }, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('authToken')}`,
+        }
       });
+      alert('User registered successfully');
     } catch (error) {
-      setError('Registration failed. Please try again.');
+      console.error('Error registering user', error.response?.data || error.message);
     }
   };
+
+  //   try {
+  //     await axios.post(`https://management-backend-oput.onrender.com/api/users/register`, {
+  //       username,
+  //       password,
+  //       role,
+  //     });
+  //   } catch (error) {
+  //     setError('Registration failed. Please try again.');
+  //   }
+  // };
 
   return (
     <div className="register-container max-w-md mx-auto mt-10 p-6 border border-gray-300 rounded-lg shadow-lg">
