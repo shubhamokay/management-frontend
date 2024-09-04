@@ -1,7 +1,7 @@
 // src/components/UserPanel.jsx
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import ProductCard from './productCard';
+import ProductCard from './ProductCard';
 // import ProductCard from './ProductCard';
 
 const UserPanel = () => {
