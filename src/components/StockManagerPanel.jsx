@@ -9,7 +9,7 @@ const StockManagerPanel = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/products`, {
+    axios.get(`https://management-backend-oput.onrender.com/api/products`, {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     })
     .then(response => setProducts(response.data))
@@ -27,7 +27,7 @@ const StockManagerPanel = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:5000/api/products/${selectedProduct._id}`, formData, {
+    axios.put(`https://management-backend-oput.onrender.com/api/products/${selectedProduct._id}`, formData, {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     })
     .then(response => {

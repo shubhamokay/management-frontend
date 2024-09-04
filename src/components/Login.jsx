@@ -24,7 +24,7 @@ const Login = () => {
     //   });
 
     try {
-        const {data} = await axios.post(`http://localhost:5000/api/users/login`, { username, password });
+        const {data} = await axios.post(`https://management-backend-oput.onrender.com/api/users/login`, { username, password });
         localStorage.setItem('token', data.token);
         setRole(data.role);
         console.log('Login successful, role:', data.role); // Debugging line

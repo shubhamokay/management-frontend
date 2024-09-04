@@ -9,7 +9,7 @@ const UserPanel = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/products`, {
+    axios.get(`https://management-backend-oput.onrender.com/api/products`, {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     })
     .then(response => setProducts(response.data))

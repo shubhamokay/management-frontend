@@ -11,7 +11,7 @@ const AdminPanel = () => {
   useEffect(() => {
     // Fetch products
     axios
-      .get(`http://localhost:5000/api/products`, {
+      .get(`https://management-backend-oput.onrender.com/api/products`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((response) => setProducts(response.data))
@@ -19,7 +19,7 @@ const AdminPanel = () => {
 
     // Fetch users
     axios
-      .get(`http://localhost:5000/api/users`, {
+      .get(`https://management-backend-oput.onrender.com/api/users`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((response) => setUsers(response.data))
@@ -28,7 +28,7 @@ const AdminPanel = () => {
 
   const handleRemoveUser = (userId) => {
     axios
-      .delete(`http://localhost:5000/api/users/${userId}`, {
+      .delete(`https://management-backend-oput.onrender.com/api/users/${userId}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then(() => setUsers(users.filter((user) => user._id !== userId)))
